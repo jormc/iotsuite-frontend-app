@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './modules/errors/page-not-found/page-not-
 import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
 import { LogbookComponent } from './components/logbook/logbook.component';
 import { ConfigComponent } from './modules/config/config/config.component';
+import { WidgetListComponent } from './modules/widget/widget-list/widget-list.component';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,10 @@ export const routes: Routes = [
       {
         path: 'logbook',
         component: LogbookComponent
+      },
+      {
+        path: 'widgets',
+        component: WidgetListComponent
       }
     ]
   },

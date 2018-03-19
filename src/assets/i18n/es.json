@@ -1,0 +1,12 @@
+{
+    "home": {
+        "navbar": {
+            "title": "IoT Suite",
+            "sections": {
+                "home": "Casa",
+                "dashboard": "Panel de datos",
+                "logbook": "Cuaderno de Bitácora"
+            }
+        }
+    }
+}

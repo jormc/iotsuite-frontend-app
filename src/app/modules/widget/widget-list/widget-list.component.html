@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Widgets</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created at</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let widget of widgets; let i = index">
+            <td> <input type="checkbox" ></td>
+            <td>{{i}}</td>
+            <td>{{widget.name}}</td>
+            <td>{{widget.description}}</td>
+            <td>{{widget.createdAt | date: 'dd/MM/yyyy HH:m:ss'}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr />
+      <div class="float-right">
+        
+      </div>
+    </div>
+  </div>
+</div>
