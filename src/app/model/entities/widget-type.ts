@@ -2,8 +2,8 @@ import { EntityBase } from './entity.base';
 
 export class WidgetType extends EntityBase {
 
-    name: string;
-    description: string;
+    public name: string;
+    public description: string;
 
     constructor(name: string) {
         super();

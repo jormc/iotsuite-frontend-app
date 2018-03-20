@@ -4,6 +4,7 @@ import { WidgetComponent } from './widget/widget.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import { WidgetEditComponent } from './widget-edit/widget-edit.component';
 import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
+import { WidgetDeleteComponent } from './widget-delete/widget-delete.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
     WidgetComponent,
     WidgetListComponent,
     WidgetEditComponent,
-    WidgetDetailComponent
+    WidgetDetailComponent,
+    WidgetDeleteComponent
   ]
 })
 export class WidgetModule { }
