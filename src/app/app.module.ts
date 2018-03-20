@@ -9,6 +9,9 @@ import { ErrorsModule } from './modules/errors/errors.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetModule } from './modules/widget/widget.module';
+import { HttpModule } from '@angular/http';
+
+import { AppService } from './services/app.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import { WidgetModule } from './modules/widget/widget.module';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    HttpModule,
     RouterModule,
     AppRoutingModule,
     HomeModule,
@@ -24,7 +28,9 @@ import { WidgetModule } from './modules/widget/widget.module';
     ErrorsModule,
     WidgetModule
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [
     AppComponent
   ]
@@ -32,6 +38,6 @@ import { WidgetModule } from './modules/widget/widget.module';
 export class AppModule {
   constructor(router: Router) {
     // Debug all routes
-    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+    // console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
   }
 }

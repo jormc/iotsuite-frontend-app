@@ -1,3 +1,14 @@
+export enum PersistenceTechnology {
+    LOCAL_STORAGE = 1,
+    SESSION_STORAGE = 2,
+    REST = 3
+}
+
+export enum EntitiesPersistenceIdentifiers {
+    WIDGET = 'widget.entity',
+    WIDGETS = 'widget.entity.list'
+}
+
 export class ModelUtils {
 
     static generateUUID(): string {
