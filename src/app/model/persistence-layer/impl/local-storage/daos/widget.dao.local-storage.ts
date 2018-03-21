@@ -3,6 +3,10 @@ import { Widget } from '../../../../entities/widget';
 import { WidgetType } from '../../../../entities/widget-type';
 import { ModelUtils, EntitiesPersistenceIdentifiers } from '../../../../utils/model.utils';
 
+/**
+ *  Widget LocalStorage DAO implementation
+ *  Uses the HTML5 LocalStorage object to store the data
+ */
 export class WidgetDAOLocalStorage implements IWidgetDAO {
 
     findAll(persistenceDependency: any): Promise<Array<Widget>> {
@@ -27,6 +31,9 @@ export class WidgetDAOLocalStorage implements IWidgetDAO {
     }
 
     delete(widget: Widget, persistenceDependency: any) {
+
+        // Get all widgets, search for the id and delete it
+
         throw new Error('Method not implemented.');
     }
 

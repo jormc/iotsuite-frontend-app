@@ -7,6 +7,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.comp
 import { LogbookComponent } from './components/logbook/logbook.component';
 import { ConfigComponent } from './modules/config/config/config.component';
 import { WidgetListComponent } from './modules/widget/widget-list/widget-list.component';
+import { WidgetEditComponent } from './modules/widget/widget-edit/widget-edit.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +24,13 @@ export const routes: Routes = [
       },
       {
         path: 'widgets',
-        component: WidgetListComponent
+        component: WidgetListComponent,
+        children: [
+          {
+            path: 'create',
+            component: WidgetEditComponent
+          }
+        ]
       }
     ]
   },

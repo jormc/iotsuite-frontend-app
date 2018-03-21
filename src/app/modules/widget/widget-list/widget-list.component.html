@@ -49,24 +49,9 @@
     <div class="col">
       <hr />
       <div class="float-right">
-        <button type="button" class="btn btn-success btn-sm" (click)="open(content)">Add widget</button>
-        <button type="button" class="btn btn-danger btn-sm" (click)="openConfirmDelete(content)">Remove selected</button>
+        <input class="btn btn-success" type="button" value="Add widget" (click)="gotoCreate();">
+        <input class="btn btn-danger" type="button" value="Delete selected" (click)="deleteSelected();">
       </div>
     </div>
   </div>
 </div>
-
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Modal title</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <app-widget-edit></app-widget-edit>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
-  </div>
-</ng-template>
