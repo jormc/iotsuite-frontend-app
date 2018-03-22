@@ -1,9 +1,10 @@
 import { ModelUtils } from '../utils/model.utils';
 
 export class EntityBase {
-    protected id: string;
-    protected createdAt: Date;
-    protected updatedAt: Date;
+
+    public id: string;
+    public createdAt: Date;
+    public updatedAt: Date;
 
     constructor() {
         this.id = ModelUtils.generateUUID();

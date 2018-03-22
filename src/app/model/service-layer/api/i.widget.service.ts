@@ -13,6 +13,6 @@ export interface IWidgetService {
 
     save(widget: Widget, persistenceTechnology: PersistenceTechnology, persistenceDependency: any);
 
-    delete(widget: Widget, persistenceTechnology: PersistenceTechnology, persistenceDependency: any);
+    delete(id: string, persistenceTechnology: PersistenceTechnology, persistenceDependency: any): Promise<Array<Widget>>;
 
 }

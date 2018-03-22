@@ -7,6 +7,7 @@ import { AppService } from '../../../services/app.service';
 import { Widget } from '../../../model/entities/widget';
 import { IWidgetService } from '../../../model/service-layer/api/i.widget.service';
 import { PersistenceTechnology } from '../../../model/utils/model.utils';
+import { WidgetService } from '../../../model/service-layer/impl/widget.service';
 
 @Component({
   selector: 'app-widget-list',
@@ -36,20 +37,35 @@ export class WidgetListComponent implements OnInit {
     );
   }
 
-  gotoCreate() {
-    console.log('Create widget');
-    const time = (new Date()).getMilliseconds();
-    this.appService.getServiceManager()
-      .getWidgetService().save(
-        new Widget('Widget ' + time),
-        PersistenceTechnology.LOCAL_STORAGE,
-        localStorage
-    );
-    this.loadWidgets();
+  addWidget() {
+    console.log('Create widget fired');
+
+    // const time = (new Date()).getMilliseconds();
+    // this.appService.getServiceManager()
+    //   .getWidgetService().save(
+    //     new Widget('Widget ' + time),
+    //     PersistenceTechnology.LOCAL_STORAGE,
+    //     localStorage
+    // );
+    // this.loadWidgets();
+
+    this.router.navigate(['/widgets/create']);
   }
 
-  deleteSelected() {
-    console.log('Delete selected');
+  editWidget(id: string) {
+    console.log('Edit widget fired for id: ' + id);
+  }
+
+  deleteWidget(id) {
+    console.log('Delete widget fired!');
+    this.appService.getServiceManager()
+    .getWidgetService().delete(id, PersistenceTechnology.LOCAL_STORAGE, localStorage).then(list => {
+      this.widgets = list;
+    });
+  }
+
+  deleteSelectedWidgets() {
+    console.log('Delete selected widgets fired');
   }
 
 }

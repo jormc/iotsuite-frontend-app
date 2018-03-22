@@ -11,7 +11,7 @@
         <thead>
           <tr>
             <th scope="col">
-              <input type="checkbox">
+              <input type="checkbox"class="master-widget-select">
             </th>
             <th scope="col">#</th>
             <th scope="col">Name</th>
@@ -23,7 +23,7 @@
         <tbody>
           <tr *ngFor="let widget of widgets; let i = index">
             <td>
-              <input type="checkbox">
+              <input type="checkbox" class="widget-select" value="{{widget.id}}">
             </td>
             <td>{{i}}</td>
             <td>{{widget.name}}</td>
@@ -31,10 +31,10 @@
             <td>{{widget.createdAt | date: 'dd/MM/yyyy HH:m:ss'}}</td>
             <td>
               <div class="btn-group btn-group-sm" role="group" aria-label="Actions">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary" (click)="editWidget(widget.id);">
                   <i class="fa fa-edit"></i>
                 </button>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger" (click)="deleteWidget(widget.id);">
                   <i class="fa fa-trash"></i>
                 </button>
               </div>
@@ -49,8 +49,8 @@
     <div class="col">
       <hr />
       <div class="float-right">
-        <input class="btn btn-success" type="button" value="Add widget" (click)="gotoCreate();">
-        <input class="btn btn-danger" type="button" value="Delete selected" (click)="deleteSelected();">
+        <input class="btn btn-success" type="button" value="Add widget" (click)="addWidget();">
+        <input class="btn btn-danger" type="button" value="Delete selected" (click)="deleteSelectedWidgets();">
       </div>
     </div>
   </div>

@@ -11,7 +11,12 @@ export class WidgetDAOLocalStorage implements IWidgetDAO {
 
     findAll(persistenceDependency: any): Promise<Array<Widget>> {
         return new Promise<Array<Widget>>((resolve, reject) => {
-            resolve(JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS)));
+            const mapObject: Map<string, Widget> = JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS));
+            const widgetList = new Array<Widget>();
+            for (const w of Object.keys(mapObject)) {
+                widgetList.push(mapObject[w]);
+            }
+            resolve(widgetList);
         });
     }
 
@@ -24,18 +29,22 @@ export class WidgetDAOLocalStorage implements IWidgetDAO {
     }
 
     save(widget: Widget, persistenceDependency: any) {
-        const object = persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS) ;
-        const widgetList = (!object || object === undefined) ? new Array<Widget>() : JSON.parse(object);
-        widgetList.push(widget);
-        persistenceDependency.setItem(EntitiesPersistenceIdentifiers.WIDGETS, JSON.stringify(widgetList));
+        const mapObject: Map<string, Widget> = JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS));
+        mapObject[widget.id] = widget;
+        persistenceDependency.setItem(EntitiesPersistenceIdentifiers.WIDGETS, JSON.stringify(mapObject));
     }
 
-    delete(widget: Widget, persistenceDependency: any) {
-
-        // Get all widgets, search for the id and delete it
-
-        throw new Error('Method not implemented.');
+    delete(id: string, persistenceDependency: any): Promise<Widget[]> {
+        return new Promise<Array<Widget>>((resolve, reject) => {
+            const mapObject: Map<string, Widget> = JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS));
+            delete mapObject[id];
+            persistenceDependency.setItem(EntitiesPersistenceIdentifiers.WIDGETS, JSON.stringify(mapObject));
+            const widgetList = new Array<Widget>();
+            for (const w of Object.keys(mapObject)) {
+                widgetList.push(mapObject[w]);
+            }
+            resolve(widgetList);
+        });
     }
 
 }
-

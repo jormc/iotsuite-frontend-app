@@ -11,6 +11,6 @@ export interface IWidgetDAO {
 
     save(widget: Widget, persistenceDependency: any);
 
-    delete(widget: Widget, persistenceDependency: any);
+    delete(id: string, persistenceDependency: any): Promise<Array<Widget>>;
 
 }

@@ -40,8 +40,8 @@ export class WidgetService implements IWidgetService {
         this.getDAO(persistenceTechnology).save(widget, persistenceDependency);
     }
 
-    delete(widget: Widget, persistenceTechnology: PersistenceTechnology, persistenceDependency: any) {
-        throw new Error('Method not implemented.');
+    delete(id: string, persistenceTechnology: PersistenceTechnology, persistenceDependency: any): Promise<Widget[]> {
+        return this.getDAO(persistenceTechnology).delete(id, persistenceDependency);
     }
 
     getDAO(persistenceTechnology: PersistenceTechnology) {
