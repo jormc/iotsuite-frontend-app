@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './modules/errors/page-not-found/page-not-
 import { AppService } from './services/app.service';
 import { ClockComponent } from './components/clock/clock.component';
 import { DateComponent } from './components/date/date.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DateComponent } from './components/date/date.component';
     HomeComponent,
     PageNotFoundComponent,
     ClockComponent,
-    DateComponent
+    DateComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     NgbModule.forRoot(),

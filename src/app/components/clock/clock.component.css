@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'alarm-clock';
+    src: url('../../assets/fonts/alarm_clock.ttf');
+}
+
+.digital-clock {
+    font-family: 'alarm-clock';
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.4em;
+}
