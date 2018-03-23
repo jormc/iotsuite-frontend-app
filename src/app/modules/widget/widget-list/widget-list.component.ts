@@ -40,16 +40,16 @@ export class WidgetListComponent implements OnInit {
   addWidget() {
     console.log('Create widget fired');
 
-    // const time = (new Date()).getMilliseconds();
-    // this.appService.getServiceManager()
-    //   .getWidgetService().save(
-    //     new Widget('Widget ' + time),
-    //     PersistenceTechnology.LOCAL_STORAGE,
-    //     localStorage
-    // );
-    // this.loadWidgets();
+      // const time = (new Date()).getMilliseconds();
+      // this.appService.getServiceManager()
+      //   .getWidgetService().save(
+      //     new Widget('Widget ' + time),
+      //     PersistenceTechnology.LOCAL_STORAGE,
+      //     localStorage
+      // );
+      // this.loadWidgets();
 
-    this.router.navigate(['/widgets/create']);
+    this.router.navigate(['widget/create']);
   }
 
   editWidget(id: string) {

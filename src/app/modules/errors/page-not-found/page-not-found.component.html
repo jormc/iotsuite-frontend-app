@@ -1,3 +1,6 @@
 <p>
-  page-not-found works!
+  <ngb-alert [type]="alert.type" [dismissible]="false">
+    <strong>{{ alert.title }}</strong>
+    <p>{{ alert.message }}</p>
+  </ngb-alert>
 </p>

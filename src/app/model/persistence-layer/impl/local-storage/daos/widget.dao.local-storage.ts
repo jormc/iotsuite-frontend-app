@@ -13,8 +13,10 @@ export class WidgetDAOLocalStorage implements IWidgetDAO {
         return new Promise<Array<Widget>>((resolve, reject) => {
             const mapObject: Map<string, Widget> = JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS));
             const widgetList = new Array<Widget>();
-            for (const w of Object.keys(mapObject)) {
-                widgetList.push(mapObject[w]);
+            if (mapObject && mapObject !== undefined) {
+                for (const w of Object.keys(mapObject)) {
+                    widgetList.push(mapObject[w]);
+                }
             }
             resolve(widgetList);
         });
@@ -29,7 +31,8 @@ export class WidgetDAOLocalStorage implements IWidgetDAO {
     }
 
     save(widget: Widget, persistenceDependency: any) {
-        const mapObject: Map<string, Widget> = JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS));
+        const dataObject = JSON.parse(persistenceDependency.getItem(EntitiesPersistenceIdentifiers.WIDGETS));
+        const mapObject = dataObject ? dataObject : new Map<string, Widget>();
         mapObject[widget.id] = widget;
         persistenceDependency.setItem(EntitiesPersistenceIdentifiers.WIDGETS, JSON.stringify(mapObject));
     }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { AlertDTO, AlertType } from '../../../dto/alert.dto';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  alert: AlertDTO;
+
+  constructor() {
+
+    this.alert = new AlertDTO(
+      1,
+      AlertType.DANGER,
+      'Page not found',
+      'The page that you\'re looking for doesn\'t exists',
+      false
+    );
+
+  }
 
   ngOnInit() {
+
   }
 
 }
