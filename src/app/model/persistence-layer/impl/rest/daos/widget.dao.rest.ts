@@ -1,6 +1,6 @@
 import { IWidgetDAO } from '../../../api/i.widget.dao';
-import { Widget } from '../../../../entities/widget';
-import { WidgetType } from '../../../../entities/widget-type';
+import { Widget } from '../../../../business-layer/entities/widget';
+import { WidgetType } from '../../../../business-layer/entities/widget-type';
 import { ModelUtils, EntitiesPersistenceIdentifiers } from '../../../../utils/model.utils';
 
 export class WidgetDAORest implements IWidgetDAO {

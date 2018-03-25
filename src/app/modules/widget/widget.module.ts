@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { WidgetRoutingModule } from './widget-routing.module';
 import { WidgetListComponent } from './widget-list/widget-list.component';
@@ -10,6 +11,7 @@ import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     WidgetRoutingModule
   ],
   declarations: [

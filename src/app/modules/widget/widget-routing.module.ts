@@ -3,29 +3,31 @@ import { Routes, RouterModule } from '@angular/router';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import { WidgetEditComponent } from './widget-edit/widget-edit.component';
 import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
+import { WidgetComponent } from './widget/widget.component';
 
 const routes: Routes = [
   {
     path: 'widget',
-    component: WidgetListComponent
-  },
-  {
-    path: 'widget/list',
-    component: WidgetListComponent
-  },
-  {
-    path: 'widget/detail',
-    component: WidgetDetailComponent
-  },
-  {
-    path: 'widget/edit/:id',
-    component: WidgetEditComponent
-  },
-  {
-    path: 'widget/create',
-    component: WidgetEditComponent
-  }
-];
+    component: WidgetComponent,
+    children: [
+      {
+        path: 'list',
+        component: WidgetListComponent
+      },
+      {
+        path: 'detail',
+        component: WidgetDetailComponent
+      },
+      {
+        path: 'edit/:id',
+        component: WidgetEditComponent
+      },
+      {
+        path: 'create',
+        component: WidgetEditComponent,
+        data: { mode: 'create' }
+      }]
+  }];
 
 @NgModule({
   imports: [

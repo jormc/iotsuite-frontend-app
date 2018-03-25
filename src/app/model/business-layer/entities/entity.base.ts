@@ -1,4 +1,4 @@
-import { ModelUtils } from '../utils/model.utils';
+import { ModelUtils } from '../../utils/model.utils';
 
 export class EntityBase {
 

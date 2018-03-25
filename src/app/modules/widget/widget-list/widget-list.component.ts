@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 
-import { AppService } from '../../../services/app.service';
+import { AppModelService } from '../../../services/app-model/app-model.service';
 
-import { Widget } from '../../../model/entities/widget';
+import { Widget } from '../../../model/business-layer/entities/widget';
 import { IWidgetService } from '../../../model/service-layer/api/i.widget.service';
 import { PersistenceTechnology } from '../../../model/utils/model.utils';
 import { WidgetService } from '../../../model/service-layer/impl/widget.service';
@@ -21,7 +21,7 @@ export class WidgetListComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private appService: AppService,
+    private appService: AppModelService,
     private http: Http
   ) { }
 
@@ -37,19 +37,9 @@ export class WidgetListComponent implements OnInit {
     );
   }
 
-  addWidget() {
+  createWidget() {
     console.log('Create widget fired');
-
-      // const time = (new Date()).getMilliseconds();
-      // this.appService.getServiceManager()
-      //   .getWidgetService().save(
-      //     new Widget('Widget ' + time),
-      //     PersistenceTechnology.LOCAL_STORAGE,
-      //     localStorage
-      // );
-      // this.loadWidgets();
-
-    this.router.navigate(['widget/create']);
+    this.router.navigate(['widget/create', {mode: 'create'}]);
   }
 
   editWidget(id: string) {

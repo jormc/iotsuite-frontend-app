@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-widget',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.navigate(['/widget/list']);
   }
 
 }

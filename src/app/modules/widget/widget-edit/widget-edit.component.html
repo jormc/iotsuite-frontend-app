@@ -1,25 +1,62 @@
-<form>
-
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter widget name">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-
+<div class="container-fluid">
   <div class="row">
     <div class="col">
+      <h3>{{ title }}</h3>
       <hr />
-      <div class="float-right">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <form>
 
-</form>
+        <input type="hidden" name="id" [(ngModel)]="widget.id" />
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="name" 
+            name="name"
+            aria-describedby="name" 
+            placeholder="Enter widget name" 
+            [(ngModel)]="widget.name">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea 
+            class="form-control" 
+            id="description" 
+            name="description"
+            aria-describedby="description" 
+            placeholder="Enter some widget description here" 
+            [(ngModel)]="widget.description"></textarea>
+        </div>
+       
+        <div class="form-group">
+          <label for="widgetType">Widget type</label>
+          <select class="form-control" id="widgetType">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <hr />
+            <div class="float-right">
+              <button type="submit" class="btn btn-primary" (click)="onCreateWidget();">Create</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

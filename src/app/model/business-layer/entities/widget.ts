@@ -8,7 +8,7 @@ export class Widget extends EntityBase {
     public type: WidgetType;
     public topic: string;
 
-    constructor(name: string) {
+    constructor(name: string = '') {
         super();
         this.name = name;
     }

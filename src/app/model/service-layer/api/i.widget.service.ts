@@ -1,6 +1,6 @@
 import { PersistenceTechnology } from '../../utils/model.utils';
-import { Widget } from '../../entities/widget';
-import { WidgetType } from '../../entities/widget-type';
+import { Widget } from '../../business-layer/entities/widget';
+import { WidgetType } from '../../business-layer/entities/widget-type';
 
 
 export interface IWidgetService {

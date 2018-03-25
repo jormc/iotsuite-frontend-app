@@ -14,7 +14,6 @@ export class PageNotFoundComponent implements OnInit {
   constructor() {
 
     this.alert = new AlertDTO(
-      1,
       AlertType.DANGER,
       'Page not found',
       'The page that you\'re looking for doesn\'t exists',

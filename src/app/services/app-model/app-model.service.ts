@@ -1,12 +1,11 @@
 
 import { Injectable } from '@angular/core';
-import { ServiceManager } from '../model/service-layer/service.manager';
 import { Http } from '@angular/http';
-
+import { ServiceManager } from '../../model/service-layer/service-manager';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class AppService {
+export class AppModelService {
 
     public serviceManager: ServiceManager;
     public data;
