@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 
-import { AppModelService } from '../../../services/app-model/app-model.service';
+import { AppModelService } from '../../../services/app-model.service';
 
 import { Widget } from '../../../model/business-layer/entities/widget';
 import { IWidgetService } from '../../../model/service-layer/api/i.widget.service';
 import { PersistenceTechnology } from '../../../model/utils/model.utils';
 import { WidgetService } from '../../../model/service-layer/impl/widget.service';
+import { AlertService } from '../../../services/alert.service';
+import { AlertDTO, AlertType } from '../../../dto/alert.dto';
 
 @Component({
   selector: 'app-widget-list',
@@ -21,6 +23,7 @@ export class WidgetListComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private alertService: AlertService,
     private appService: AppModelService,
     private http: Http
   ) { }
@@ -51,6 +54,7 @@ export class WidgetListComponent implements OnInit {
     this.appService.getServiceManager()
     .getWidgetService().delete(id, PersistenceTechnology.LOCAL_STORAGE, localStorage).then(list => {
       this.widgets = list;
+      this.alertService.addSuccessAlert('Success', 'Widget deleted successfully');
     });
   }
 

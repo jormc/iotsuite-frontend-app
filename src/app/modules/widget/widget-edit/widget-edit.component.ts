@@ -3,10 +3,11 @@ import { Widget } from '../../../model/business-layer/entities/widget';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertDTO, AlertType } from '../../../dto/alert.dto';
-import { AppModelService } from '../../../services/app-model/app-model.service';
+import { AppModelService } from '../../../services/app-model.service';
 import { Http } from '@angular/http';
 import { PersistenceTechnology, ModelUtils, WidgetTypes } from '../../../model/utils/model.utils';
 import { WidgetType } from '../../../model/business-layer/entities/widget-type';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-widget-edit',
@@ -19,11 +20,15 @@ export class WidgetEditComponent implements OnInit {
   mode: string;
   create: boolean;
   widget: Widget;
-  types: Array<WidgetType>;
+  types: {key: string, value: string}[] = [
+    {key: 'sensor', value: 'Sensor'},
+    {key: 'actuator', value: 'Actuator'}
+  ];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private alertService: AlertService,
     private appService: AppModelService,
     private http: Http) { }
 
@@ -45,6 +50,7 @@ export class WidgetEditComponent implements OnInit {
       PersistenceTechnology.LOCAL_STORAGE,
       localStorage
     );
+    this.alertService.addSuccessAlert('Success', 'New widget created successfully');
     this.router.navigate(['/widget/list']);
   }
 

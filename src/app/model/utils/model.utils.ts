@@ -6,15 +6,12 @@ export enum PersistenceTechnology {
 
 export enum EntitiesPersistenceIdentifiers {
     WIDGET = 'widget.entity',
-    WIDGETS = 'widget.entity.list',
-    WIDGET_TYPE = 'widget-type.entity',
-    WIDGET_TYPES = 'widget-type.entity.list'
+    WIDGETS = 'widget.entity.list'
 }
 
 export enum WidgetTypes {
-    SENSOR,
-    ACTUATOR,
-    CLOCK
+    SENSOR = 'sensor',
+    ACTUATOR = 'actuator'
 }
 
 export class ModelUtils {

@@ -1,12 +1,14 @@
 <app-navbar></app-navbar>
 <app-alert></app-alert>
-<div id="content" class="container-fluid">
-  <div class="row">
-    <div id="sidebar" class="col-4">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div id="body" class="col-8">
-      <router-outlet></router-outlet>
+<content>
+  <div id="content" class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="col-sm-4">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div id="body" class=".d-none">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
+</content>
