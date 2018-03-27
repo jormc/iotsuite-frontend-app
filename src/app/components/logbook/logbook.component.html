@@ -4,7 +4,7 @@
       <h3 class="float-left">Logbook</h3>
       <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group btn-group-sm" role="group" aria-label="Third group">
-          <button type="button" class="btn btn-secondary" (click)="open(content)">Add</button>
+          <button type="button" class="btn btn-primary" (click)="open(content)">Add</button>
         </div>
       </div>
     </div>
@@ -54,9 +54,9 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="onSaveLog(); c('add')">Add</button>
-      <button type="reset" class="btn btn-outline-dark" >Reset</button>
-      <button type="button" class="btn btn-outline-dark" (click)="c('cancel')">Cancel</button>
+      <button type="button" class="btn btn-primary btn-sm" (click)="onSaveLog(); c('add')">Add</button>
+      <button type="reset" class="btn btn-primary btn-sm">Reset</button>
+      <button type="button" class="btn btn-primary btn-sm" (click)="c('cancel')">Cancel</button>
     </div>
   </form>
 </ng-template>

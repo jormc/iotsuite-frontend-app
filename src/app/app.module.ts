@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LogbookComponent } from './components/logbook/logbook.component';
+import { AppModelService } from './services/app-model.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,12 @@ import { LogbookComponent } from './components/logbook/logbook.component';
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
+    HttpModule,
     FormsModule,
     AppRoutingModule
   ],
   providers: [
-
+    AppModelService
   ],
   bootstrap: [
     AppComponent
