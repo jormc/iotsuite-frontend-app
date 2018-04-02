@@ -4,8 +4,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
-import { DropdownDirective } from './directives/dropdown.directive';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -14,23 +12,29 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LogbookComponent } from './components/logbook/logbook.component';
 import { AppModelService } from './services/app-model.service';
 import { HttpModule } from '@angular/http';
+import { ConfigComponent } from './components/config/config.component';
+import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    DropdownDirective,
     HomeComponent,
     PageNotFoundComponent,
-    LogbookComponent
+    LogbookComponent,
+    ConfigComponent,
+    AboutComponent
   ],
   imports: [
+    AppRoutingModule,
     NgbModule.forRoot(),
     BrowserModule,
     HttpModule,
     FormsModule,
-    AppRoutingModule
+    DashboardModule
   ],
   providers: [
     AppModelService

@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LogbookComponent } from './components/logbook/logbook.component';
+import { ConfigComponent } from './components/config/config.component';
+import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {
@@ -12,8 +15,20 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'config',
+    component: ConfigComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: 'logbook',
     component: LogbookComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: '**',

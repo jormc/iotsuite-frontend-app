@@ -1,0 +1,26 @@
+@font-face {
+  /* https://www.dafont.com/es/alarm-clock.font */
+  font-family: 'alarm-clock';
+  src: url('../../assets/fonts/alarm-clock.ttf');
+}
+
+.digital-clock {
+    font-family: 'alarm-clock';
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+}
+
+.digital-clock > div {
+  float: left;
+}
+
+.digital-clock.clock-digit {
+
+}
+
+.dots {
+  display: inline-block;
+  min-width: 0.3em;
+  text-align: center;
+}

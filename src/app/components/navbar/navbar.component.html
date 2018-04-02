@@ -2,20 +2,25 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" routerLink="/home" routerLinkActive="active">IoTSuite</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div id="navbarCollapse" class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/config" routerLinkActive="active">Config</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/logbook" routerLinkActive="active">Logbook</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/link2" routerLinkActive="active">Link 2</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
         </li>
       </ul>
       <form class="form-inline mt-2 mt-md-0">
