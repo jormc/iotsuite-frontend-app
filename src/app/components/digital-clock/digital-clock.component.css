@@ -15,12 +15,14 @@
   float: left;
 }
 
-.digital-clock.clock-digit {
+.digital-clock .clock-digit {
 
 }
 
 .dots {
   display: inline-block;
-  min-width: 0.3em;
+  min-width: 0.5em;
+  margin-right: 0.1em;
   text-align: center;
+  font-style: italic;
 }
