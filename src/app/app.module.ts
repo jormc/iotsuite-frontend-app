@@ -4,7 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 
 import { AppModelService } from './services/app-model.service';
 import { GeolocationService } from './services/geolocation.service';
@@ -21,6 +21,9 @@ import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.comp
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { AboutComponent } from './components/about/about.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { OpenWeatherMapService } from './services/open-weather-map.service';
+import { WeatherStationComponent } from './components/weather-station/weather-station.component';
+import { DigitalClockComponent } from './components/digital-clock/digital-clock.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +36,22 @@ import { AlertComponent } from './components/alert/alert.component';
     ConfigComponent,
     ConfigWeatherServerComponent,
     AboutComponent,
-    AlertComponent
+    AlertComponent,
+    DigitalClockComponent,
+    WeatherStationComponent
   ],
   imports: [
     AppRoutingModule,
     NgbModule.forRoot(),
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     DashboardModule
   ],
   providers: [
     AppModelService,
-    GeolocationService
+    GeolocationService,
+    OpenWeatherMapService
   ],
   bootstrap: [
     AppComponent

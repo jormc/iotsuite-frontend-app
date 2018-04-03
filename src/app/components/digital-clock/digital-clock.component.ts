@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GeolocationService } from '../../services/geolocation.service';
-import { OpenweatherService } from '../../services/openweather.service';
 
 @Component({
   selector: 'app-digital-clock',
@@ -15,7 +13,9 @@ export class DigitalClockComponent implements OnInit {
   dots: string;
   showDots: boolean;
 
-  constructor(private geolocationService: GeolocationService) {
+  weatherData: {};
+
+  constructor() {
     this.hours = String.fromCharCode(198, 198);
     this.minutes = String.fromCharCode(198, 198);
     this.seconds = String.fromCharCode(198, 198);
@@ -24,13 +24,6 @@ export class DigitalClockComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.geolocationService.getLocation().subscribe(rep => {
-      console.log(rep);
-      const lat = rep.coords.latitude;
-      const lon = rep.coords.longitude;
-      console.log('Your location: ' + lat + ' ' + lon);
-    });
 
     const timeoutId = setInterval(() => {
       const time = new Date();

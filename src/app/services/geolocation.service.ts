@@ -7,14 +7,20 @@ export class GeolocationService {
   constructor() { }
 
   getLocation(): Observable<Position> {
+    console.log('getLocation');
+
     return Observable.create(observer => {
       if (window.navigator && window.navigator.geolocation) {
         window.navigator.geolocation.getCurrentPosition(
           (position) => {
+            console.log('Position: ' + position);
             observer.next(position);
             observer.complete();
           },
-          (error) => observer.error(error)
+          (error) => {
+            console.log('Error: ' + error);
+            observer.error(error);
+          }
         );
       } else {
         observer.error('Unsupported Browser');

@@ -8,11 +8,16 @@ import { LogbookComponent } from './components/logbook/logbook.component';
 import { ConfigComponent } from './modules/config/config/config.component';
 import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
+import { WeatherStationComponent } from './components/weather-station/weather-station.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'weather-station',
+    component: WeatherStationComponent
   },
   {
     path: 'config',
