@@ -1,0 +1,8 @@
+#alert-wrapper {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  right: 0px;
+  margin: 10px;
+  z-index: 999999999;
+}

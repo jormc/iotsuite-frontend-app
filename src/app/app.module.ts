@@ -9,6 +9,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundErrorComponent } from './components/page-not-found-error/page-not-found-error.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { TestComponent } from './components/test/test.component';
+import { AlertService } from './services/alert.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { PageNotFoundErrorComponent } from './components/page-not-found-error/pa
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    PageNotFoundErrorComponent
+    PageNotFoundErrorComponent,
+    AlertComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import { PageNotFoundErrorComponent } from './components/page-not-found-error/pa
     RouterModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AlertService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

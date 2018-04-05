@@ -1,0 +1,8 @@
+<div id="alert-wrapper">
+  <ngb-alert *ngFor="let alert of alerts" [type]="alert.type" (close)="closeAlert(alert)">
+    <p>
+      <strong>{{ alert.title }}</strong>
+    </p>
+    <p>{{ alert.message }}</p>
+  </ngb-alert>
+</div>

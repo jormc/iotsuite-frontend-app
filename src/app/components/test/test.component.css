@@ -1,0 +1,7 @@
+.alert-test-buttons {
+    text-align: center;
+}
+
+.alert-test-buttons .btn {
+    margin: 5px auto;
+}

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h3>Test page</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ngb-tabset>
+        <ngb-tab>
+          <ng-template ngbTabTitle>Alerts</ng-template>
+          <ng-template ngbTabContent>
+            <div class="container alert-test-buttons">
+              <div class="row align-center">
+                <div class="col">
+                  <button type="button" class="btn btn-success btn-sm" (click)="addSuccessAlert()">Success</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-info btn-sm" (click)="addInfoAlert()">Info</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-warning btn-sm" (click)="addWarningAlert()">Warning</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-danger btn-sm" (click)="addDangerAlert()">Danger</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-primary btn-sm" (click)="addPrimaryAlert()">Primary</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-secondary btn-sm" (click)="addSecondaryAlert()">Secondary</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-light btn-sm" (click)="addLightAlert()">Light</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-dark btn-sm" (click)="addDarkAlert()">Dark</button>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle>Test 2</ng-template>
+          <ng-template ngbTabContent>
+            <p>Content test 2</p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle>Test 3</ng-template>
+          <ng-template ngbTabContent>
+            <p>Content test 3</p>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>
