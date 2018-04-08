@@ -1,0 +1,57 @@
+@font-face {
+    /* https://www.dafont.com/es/alarm-clock.font */
+    font-family: 'alarm-clock';
+    src: url('/assets/fonts/alarm-clock.ttf');
+}
+
+@font-face {
+    font-family: 'transponder';
+    src: url('/assets/fonts/transponder.ttf');
+}
+
+@font-face {
+    font-family: 'transponderg';
+    src: url('/assets/fonts/transponderg.ttf');
+}
+
+.digital-clock {
+  font-family: 'alarm-clock';
+}
+
+.digital-clock .clock {
+    font-size: 2em;
+}
+
+/*
+.card,
+.card-header,
+.card-body,
+.card-footer {
+    padding: 5px;
+    margin: 0px;
+    background-color: white;
+}
+
+
+
+.digital-date {
+    font-size: 1em;
+}
+
+.digital-clock {
+    font-size: 2.1em;
+}
+
+.digital-clock > div {
+    float: left;
+}
+
+.dots {
+    display: inline-block;
+    min-width: 0.5em;
+    margin-right: 0.1em;
+    text-align: center;
+    font-style: italic;
+}
+
+*/
