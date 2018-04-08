@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col">
       <h3>Test page</h3>
@@ -111,13 +111,14 @@
             <hr>
             <div style="font-size: 0.8em">{{clockConfig | json}}</div>
             <hr>
-            <app-digital-clock [config]="clockConfig"></app-digital-clock>
+            <app-digital-clock></app-digital-clock>
           </ng-template>
         </ngb-tab>
         <ngb-tab>
-          <ng-template ngbTabTitle>Test 3</ng-template>
+          <ng-template ngbTabTitle>Weather Station</ng-template>
           <ng-template ngbTabContent>
-            <p>Content test 3</p>
+            <br>
+            <app-weather-station></app-weather-station>
           </ng-template>
         </ngb-tab>
       </ngb-tabset>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <img src="{{weatherData.current_observation.icon_url}}" alt="">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">A</div>
+    </div>
+    <div class="col">
+      <div class="card">A</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="clock">
+          <app-date [dateFormat]="clockFormat"></app-date>
+        </div>
+        <div class="date">
+          <app-date [dateFormat]="dateFormat"></app-date>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

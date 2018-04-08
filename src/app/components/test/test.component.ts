@@ -12,11 +12,7 @@ import { AlertDTO } from '../../dto/alert.dto';
 export class TestComponent implements OnInit {
 
   alert: AlertDTO;
-
-  clockConfig: ClockConfig = {
-    clockFormat: 'hh:MM:ss',
-    dateFormat: 'LLLL dd, yyyy'
-  };
+  clockConfig: ClockConfig;
 
   constructor(private alertService: AlertService) {
     this.alert = {
@@ -25,6 +21,7 @@ export class TestComponent implements OnInit {
       message: null,
       dismissible: true
     };
+    this.clockConfig = new ClockConfig();
    }
 
   ngOnInit() {

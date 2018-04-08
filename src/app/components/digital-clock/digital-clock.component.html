@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <div class="clock">{{clock}}</div>
+                <div class="clock"><app-date [dateFormat]="['HH:mm:ss']"></app-date></div>
             </div>
             <div class="col-12 text-center">
-                <div class="date">{{date}}</div>
+                <div class="date"><app-date [dateFormat]="['dd/MM/yyyy']"></app-date></div>
             </div>
         </div>
     </div>
