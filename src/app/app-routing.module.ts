@@ -5,8 +5,24 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '/home', pathMatch: 'full'}
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'servers',
+    loadChildren: './servers/servers.module#ServersModule'
+  },
+  {
+    path: '**',
+    redirectTo: '/error/404',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

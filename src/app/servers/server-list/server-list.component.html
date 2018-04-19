@@ -1,0 +1,20 @@
+<h2>Servers</h2>
+<hr />
+
+<div class="card-deck">
+
+  <div *ngFor="let server of servers" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{server.name}}</h5>
+      <p class="card-text">{{server.host}}:{{server.port}}</p>
+      <p class="card-text"></p>
+      <p class="card-text">
+        <i *ngIf="server.status == -1" class="fa fa-times-circle"></i>
+        <i *ngIf="server.status == 0" class="fa fa-exclamation-triangle"></i>
+        <i *ngIf="server.status == 1" class="fa fa-check-circle"></i>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+
+</div>
