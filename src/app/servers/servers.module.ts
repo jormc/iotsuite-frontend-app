@@ -3,8 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 
-import { ServerService } from './services/ServerService';
 import { MqttService } from '../services/mqtt.service';
+import { ServersService } from './services/servers.service';
 
 import { ServersRoutingModule } from './servers-routing.module';
 import { ServerListComponent } from './server-list/server-list.component';
@@ -28,8 +28,8 @@ import { ServerListItemComponent } from './server-list-item/server-list-item.com
     ServerListItemComponent
   ],
   providers: [
-    ServerService,
-    MqttService
+    MqttService,
+    ServersService
   ]
 })
 export class ServersModule { }

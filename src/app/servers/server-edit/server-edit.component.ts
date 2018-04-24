@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
-import { ServerService } from '../services/ServerService';
+import { ServersService } from '../services/servers.service';
 
 @Component({
   selector: 'app-server-edit',
@@ -17,7 +17,7 @@ export class ServerEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private serverService: ServerService,
+    private serverService: ServersService,
     private router: Router
   ) { }
 

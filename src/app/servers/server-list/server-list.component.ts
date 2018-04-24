@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Server, ServerStatus } from '../model/server';
-import { ServerService } from '../services/ServerService';
 import { MqttService } from '../../services/mqtt.service';
+import { ServersService } from '../services/servers.service';
 
 @Component({
   selector: 'app-server-list',
@@ -19,25 +19,23 @@ export class ServerListComponent implements OnInit, OnDestroy {
   timer: any;
 
   constructor(
-    private serverService: ServerService,
+    private serversService: ServersService,
     private mqttService: MqttService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.subscription = this.serverService.serversChanged
+    this.subscription = this.serversService.serversChanged
       .subscribe(
         (servers: Array<Server>) => {
           this.servers = servers;
         }
       );
-    this.servers = this.serverService.getServers();
-
-    this.updateServerStatus();
+    this.servers = this.serversService.getServers();
   }
 
   ngOnDestroy(): void {
-
+    this.subscription.unsubscribe();
   }
 
   onNewServer(): void {
@@ -45,22 +43,4 @@ export class ServerListComponent implements OnInit, OnDestroy {
     this.router.navigate(['servers', 'new']);
   }
 
-  updateServerStatus() {
-    for (const server of this.servers) {
-      try {
-        const client = this.mqttService.connect(server);
-        client.on('connect', () => {
-          console.log('Client connected:', server.name);
-        });
-        client.on('reconnect', () => {
-          console.log('Client reconnected:', server.name);
-        });
-        client.on('error', () => {
-          console.log('Client connection error:', server.name);
-        });
-      } catch (e) {
-        console.log('ERRROR:', e);
-      }
-    }
-  }
 }

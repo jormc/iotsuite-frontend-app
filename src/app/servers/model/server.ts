@@ -1,9 +1,10 @@
 import { IClientOptions, MqttClient } from 'mqtt';
 
 export enum ServerStatus {
-    ONLINE = 'online',
-    OFFLINE = 'offline',
+    CONNECTED = 'connected',
     ERROR = 'error',
+    CONNECTING = 'connectting',
+    RECONNECTING = 'reconnecting',
     UNKNOWN = 'unknown'
 }
 
@@ -24,6 +25,9 @@ export class Server {
     host: string;
     port: number;
     status: ServerStatus;
+
+    lastConnection: number;
+    connectionRetries: number;
 
     constructor(
         name: string,
