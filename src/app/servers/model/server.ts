@@ -1,27 +1,39 @@
+import { IClientOptions, MqttClient } from 'mqtt';
+
 export enum ServerStatus {
-    ONLINE = 1,
-    OFFLINE = 0,
-    UNKNOWN = -1
+    ONLINE = 'online',
+    OFFLINE = 'offline',
+    ERROR = 'error',
+    UNKNOWN = 'unknown'
+}
+
+export enum ServerProtocol {
+    WSS = 'wss',
+    WS = 'ws',
+    MQTT = 'mqtt',
+    MQTTS = 'mqtts',
+    TCP = 'tcp',
+    SSL = 'ssl',
+    WX = 'wx',
+    WXS = 'wxs'
 }
 
 export class Server {
 
-    id: string;
     name: string;
     host: string;
     port: number;
     status: ServerStatus;
 
     constructor(
-        id: string,
         name: string,
         host: string,
         port: number
     ) {
-        this.id = id;
         this.name = name;
         this.host = host;
         this.port = port;
         this.status = ServerStatus.UNKNOWN;
     }
+
 }
