@@ -14,12 +14,9 @@ export class DashboardComponent implements OnInit {
   constructor() {
 
     this.widgets = [
-      new DashboardWidget('Widget 1', '/test', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.TEXT, 0),
-      new DashboardWidget('Widget 2', '/test', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.TEXT, 1),
-      new DashboardWidget('Widget 3', '/test', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.TEXT, 1),
-      new DashboardWidget('Widget 4', '/test', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.TEXT, 1),
-      new DashboardWidget('Widget 5', '/test', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.TEXT, 1),
-      new DashboardWidget('Widget 6', '/test', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.TEXT, 1)
+      new DashboardWidget('Widget 1', '/system/core/0/temp', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.NUMBER, 0),
+      new DashboardWidget('Widget 2', '/system/core/1/temp', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.NUMBER, 0),
+      new DashboardWidget('Widget 2', '/test/switch', DashboardWidgetType.OUTPUT, DashboardWidgetDataType.BOOLEAN, 0)
     ];
 
   }

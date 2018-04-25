@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Server, ServerStatus } from '../model/server';
 import { MqttClient } from 'mqtt';
-import { MqttService } from '../../services/mqtt.service';
+import { MqttService } from '../../shared/services/mqtt.service';
 
 @Component({
   selector: 'app-server-list-item',

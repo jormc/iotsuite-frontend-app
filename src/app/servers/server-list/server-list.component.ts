@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Server, ServerStatus } from '../model/server';
-import { MqttService } from '../../services/mqtt.service';
-import { ServersService } from '../services/servers.service';
+import { ServersService } from '../../shared/services/servers.service';
+import { MqttService } from '../../shared/services/mqtt.service';
 
 @Component({
   selector: 'app-server-list',

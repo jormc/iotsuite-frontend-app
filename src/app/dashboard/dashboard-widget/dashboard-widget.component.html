@@ -1,16 +1,16 @@
 <div class="card">
   <div class="card-header">
-    <small class="text-muted float-left">{{ server.name }}</small>
-    <small class="text-muted float-right">{{ widget.topic }}</small>
-  </div>
-  <div class="card-body">
-    <span class="h5">VALUE</span>
-  </div>
-  <div class="card-footer">
     <small class="text-muted float-left">
       <i class="fa fa-exclamation-triangle" *ngIf="!client.connected"></i>
       <i class="fa fa-check-circle" *ngIf="client.connected"></i>
+      <span>&nbsp;{{ server.name }}</span>
     </small>
-    <small class="text-muted float-right">Last update: {{ widget.lastUpdate | date: 's' }}s</small>
+    <small class="text-muted float-right">{{ widget.topic }}</small>
+  </div>
+  <div class="card-body">
+    <span class="h5">{{ widget.lastValue }}</span>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted float-right">Last updated: {{ widget.lastUpdate | date: 'HH:mm:ss' }}</small>
   </div>
 </div>

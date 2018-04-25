@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import * as mqtt from 'mqtt';
 import { MqttClient, IClientOptions } from 'mqtt';
 
-import { Server } from '../servers/model/server';
+import { Server } from '../../servers/model/server';
 
 @Injectable()
 export class MqttService {
@@ -12,11 +12,10 @@ export class MqttService {
 
   connect(server: Server): MqttClient {
     const client = mqtt.connect(this.getClientOpntions(server));
-
     return client;
   }
 
-  end(client: MqttClient): void {
+  disconnect(client: MqttClient): void {
     client.end();
   }
 

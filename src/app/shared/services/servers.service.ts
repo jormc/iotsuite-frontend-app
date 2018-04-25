@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
-import { Server } from '../model/server';
+import { Server } from '../../servers/model/server';
 
 @Injectable()
 export class ServersService {
@@ -12,8 +12,7 @@ export class ServersService {
   constructor() {
     this.serversChanged = new Subject<Array<Server>>();
     this.servers = [
-      new Server('Ubuntu', '172.20.16.51', 9001),
-      new Server('Remote', '12.122.1.221', 1883)
+      new Server('Localhost', '127.0.0.1', 9001)
     ];
   }
 
@@ -35,8 +34,8 @@ export class ServersService {
     this.serversChanged.next(this.servers.slice());
   }
 
-  updateServer(index: number, newRecipe: Server) {
-    this.servers[index] = newRecipe;
+  updateServer(index: number, server: Server) {
+    this.servers[index] = server;
     this.serversChanged.next(this.servers.slice());
   }
 

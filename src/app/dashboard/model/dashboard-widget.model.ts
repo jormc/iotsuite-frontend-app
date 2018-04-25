@@ -19,6 +19,8 @@ export class DashboardWidget {
     type: DashboardWidgetType;
     dataType: DashboardWidgetDataType;
     lastUpdate: number;
+    lastConnection: number;
+    lastValue: any;
 
     constructor(name: string, topic: string, type: DashboardWidgetType, dataType: DashboardWidgetDataType, serverId: number) {
         this.name = name;
@@ -26,7 +28,9 @@ export class DashboardWidget {
         this.type = type;
         this.dataType = dataType;
         this.serverId = serverId;
-        this.lastUpdate = Date.now();
+        this.lastUpdate = null;
+        this.lastConnection = null;
+        this.lastValue = 'N/A';
     }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
-import { ServersService } from '../services/servers.service';
+import { ServersService } from '../../shared/services/servers.service';
 
 @Component({
   selector: 'app-server-edit',

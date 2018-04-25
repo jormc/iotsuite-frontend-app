@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+
 import { DashboardWidget } from '../model/dashboard-widget.model';
-import { ServersService } from '../../servers/services/servers.service';
-import { Server } from '../../servers/model/server';
 import { MqttClient } from 'mqtt';
-import { MqttService } from '../../services/mqtt.service';
+import { Server } from '../../servers/model/server';
+import { ServersService } from '../../shared/services/servers.service';
+import { MqttService } from '../../shared/services/mqtt.service';
 
 @Component({
   selector: 'app-dashboard-widget',
@@ -31,7 +32,14 @@ export class DashboardWidgetComponent implements OnInit, OnDestroy {
     this.client = this.mqttService.connect(this.server);
 
     this.client.on('connect', () => {
-      console.log('Connected!');
+      console.log(this.server.name, 'connected!');
+      this.client.subscribe(this.widget.topic);
+    });
+
+    this.client.on('message', (topic, message) => {
+      console.log('Message:', topic, message);
+      this.widget.lastValue = message;
+      this.widget.lastUpdate = Date.now();
     });
 
     this.client.on('reconnect', () => {
@@ -45,8 +53,9 @@ export class DashboardWidgetComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('[ngOnDestroy]', 'Ending client connection');
-    this.client.end();
+    console.log('[ngOnDestroy]', 'Ending client connection for', this.server.name);
+    this.client.unsubscribe(this.widget.topic);
+    this.mqttService.disconnect(this.client);
   }
 
 }
