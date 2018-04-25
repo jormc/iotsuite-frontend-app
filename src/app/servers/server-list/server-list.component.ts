@@ -35,11 +35,12 @@ export class ServerListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    console.log('[ngOnDestroy]', 'Disconnecting clients...');
     this.subscription.unsubscribe();
   }
 
   onNewServer(): void {
-    console.log('onNewServer');
+    console.log('[onNewServer]', 'Goto new server form');
     this.router.navigate(['servers', 'new']);
   }
 

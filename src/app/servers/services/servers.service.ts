@@ -12,7 +12,7 @@ export class ServersService {
   constructor() {
     this.serversChanged = new Subject<Array<Server>>();
     this.servers = [
-      new Server('Ubuntu', '127.0.0.1', 9001),
+      new Server('Ubuntu', '172.20.16.51', 9001),
       new Server('Remote', '12.122.1.221', 1883)
     ];
   }

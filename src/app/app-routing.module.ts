@@ -19,6 +19,14 @@ const appRoutes: Routes = [
     loadChildren: './servers/servers.module#ServersModule'
   },
   {
+    path: 'dashboard',
+    loadChildren: './dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'widgets',
+    loadChildren: './widgets/widgets.module#WidgetsModule'
+  },
+  {
     path: '**',
     redirectTo: '/error/404',
     pathMatch: 'full'

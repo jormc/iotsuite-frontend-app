@@ -32,7 +32,7 @@ export class ServerEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('onSubmit');
+    console.log('[onSubmit]', 'Submitting serfer form');
     if (this.editMode) {
       this.serverService.updateServer(this.id, this.serverForm.value);
     } else {
@@ -42,12 +42,12 @@ export class ServerEditComponent implements OnInit {
   }
 
   onCancel() {
-    console.log('onCancel');
+    console.log('[onCancel]', 'Cancelling server form');
     this.router.navigate(['/servers']);
   }
 
   private initForm() {
-    console.log('initForm > editMode:', this.editMode);
+    console.log('[initForm]', 'editMode:', this.editMode);
 
     let serverName = '';
     let serverHost = '';
@@ -55,9 +55,6 @@ export class ServerEditComponent implements OnInit {
 
     if (this.editMode) {
       const server = this.serverService.getServer(this.id);
-
-      console.log(server);
-
       serverName = server.name;
       serverHost = server.host;
       serverPort = server.port;

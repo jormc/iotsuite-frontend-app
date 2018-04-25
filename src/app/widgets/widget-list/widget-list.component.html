@@ -1,0 +1,17 @@
+<h3>Widgets</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let widget of widgets; let i = index">
+      <td>{{i}}</td>
+      <td>{{widget.name}}</td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
