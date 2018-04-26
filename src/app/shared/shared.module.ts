@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { MqttService } from './services/mqtt.service';
 import { ServersService } from './services/servers.service';
 
 @NgModule({
   declarations: [
+  ],
+  imports: [
+    NgbModule.forRoot()
   ],
   providers: [
     MqttService,
@@ -14,4 +19,4 @@ import { ServersService } from './services/servers.service';
     CommonModule
   ]
 })
-export class SharedModule {}
+export class SharedModule { }

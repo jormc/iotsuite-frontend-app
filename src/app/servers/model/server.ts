@@ -22,12 +22,33 @@ export enum ServerProtocol {
 export class Server {
 
     name: string;
+
+    /* ########################## */
+    /* 'some' mqtt.IClientOptions */
     host: string;
     port: number;
-    status: ServerStatus;
+    path: string;
+    protocol: ServerProtocol;
+    keepalive: number;
+    clientId: string;
+    protocolId: string;
+    protocolVersion: string;
+    clean: boolean;
+    reconnectPeriod: number;
+    connectTimeout: number;
+    username: string;
+    password: string;
+    incomingStore: string;
+    outgoingStore: string;
+    queueQoSZero: boolean;
+    reschedulePings: boolean;
+    resubscribe: boolean;
+    /* ########################## */
 
+    status: ServerStatus;
     lastConnection: number;
     connectionRetries: number;
+    maxConnectionRetries: number;
 
     constructor(
         name: string,
@@ -37,6 +58,7 @@ export class Server {
         this.name = name;
         this.host = host;
         this.port = port;
+        this.protocol = ServerProtocol.MQTT;
         this.status = ServerStatus.UNKNOWN;
     }
 

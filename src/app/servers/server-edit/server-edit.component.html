@@ -5,39 +5,53 @@
     <hr />
   </div>
 </div>
-<div class="row">
-  <div class="col">
-    <form [formGroup]="serverForm" (ngSubmit)="onSubmit()">
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" formControlName="name" class="form-control" placeholder="Server name">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="name">Host</label>
-            <input type="text" name="host" formControlName="host" class="form-control" placeholder="Server host">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col">
+<form [formGroup]="serverForm" (ngSubmit)="onSubmit()">
+  <ngb-tabset>
+    <ngb-tab>
+      <ng-template ngbTabTitle>Connection</ng-template>
+      <ng-template ngbTabContent>
+        <div class="row">
+          <div class="col-12">
             <div class="form-group">
-              <label for="name">Port</label>
-              <input type="text" name="port" formControlName="port" class="form-control" placeholder="Server port">
+              <label for="name">Server name</label>
+              <input type="text" name="name" formControlName="name" class="form-control" placeholder="Server name">
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-9">
+            <div class="form-group">
+              <label for="name">Server host</label>
+              <input type="text" name="host" formControlName="host" class="form-control" placeholder="Server host">
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3">
+            <div class="form-group">
+              <label for="name">Server port</label>
+              <input type="number" name="port" formControlName="port" class="form-control" placeholder="Server port">
             </div>
           </div>
         </div>
-      <div class="row">
-          <div class="col">
-            <button type="submit" class="btn btn-success" [disabled]="!serverForm.valid">Save</button>
-            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
-          </div>
-        </div>
-    </form>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>Optional</ng-template>
+      <ng-template ngbTabContent>
+
+
+
+
+
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+  <div class="row">
+    <div class="col">
+      <hr>
+      <pre>{{ serverForm.value | json }}</pre>
+      <hr>
+      <div class="float-right">
+        <button type="submit" class="btn btn-success" [disabled]="!serverForm.valid">Save</button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+      </div>
+    </div>
   </div>
-</div>
+</form>

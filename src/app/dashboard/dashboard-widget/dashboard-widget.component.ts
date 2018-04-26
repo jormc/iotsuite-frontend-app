@@ -13,7 +13,6 @@ import { MqttService } from '../../shared/services/mqtt.service';
 })
 export class DashboardWidgetComponent implements OnInit, OnDestroy {
 
-
   @Input()
   widget: DashboardWidget;
   server: Server;

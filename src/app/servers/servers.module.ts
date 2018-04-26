@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ServersRoutingModule } from './servers-routing.module';
 import { ServerListComponent } from './server-list/server-list.component';
@@ -14,6 +15,7 @@ import { ServerListItemComponent } from './server-list-item/server-list-item.com
   imports: [
     CommonModule,
     SharedModule,
+    NgbModule,
     ReactiveFormsModule,
     ServersRoutingModule
   ],
